@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   post "/sessions/:id", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
 
-  get "/users/:user_id/posts/new", to: "posts#new"
+  get "/users/:user_id/posts", to: "posts#index", as: "posts"
+  get "/users/:user_id/posts/new", to: "posts#new", as: "new_post"
   post "/users/:user_id/posts", to: "posts#create"
-  get "/users/:user_id/posts/:post_id", to: "posts#show"
-  get "/users/:user_id/posts/:post_id/edit", to: "posts#edit"
+  get "/users/:user_id/posts/:post_id", to: "posts#show", as: "post"
+  get "/users/:user_id/posts/:post_id/edit", to: "posts#edit", as: "edit_post"
   patch "/users/:user_id/posts/:post_id", to: "posts#update"
   delete "/users/:user_id/posts/:post_id", to: "posts#destroy"
 
