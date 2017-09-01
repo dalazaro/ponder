@@ -10,8 +10,9 @@ class PostsController < ApplicationController
   def create
     post = Post.new(params.require(:post).permit(:title, :content))
     post.user_id = params[:user_id]
-    post.save
-    redirect_to posts_path
+    if post.save  #if save was successful, redirect
+      redirect_to user_path(params[:user_id])
+    end
   end
   # get "/users/:user_id/posts/:post_id", to: "posts#show"
   def show
@@ -31,11 +32,8 @@ class PostsController < ApplicationController
   end
   # delete "/users/:user_id/posts/:post_id", to: "posts#destroy"
   def destroy
-    p "user id:" + params[:user_id]
-    p "post_id:" + params[:post_id]
     post = Post.find_by_id(params[:post_id])
-    post.destroy # gone
+    post.destroy # delete this post from db
     redirect_to user_path(params[:user_id])
   end
-
 end
