@@ -1,14 +1,22 @@
 # Ponder
 <Link to Heroku hosted project>
 
-### Description
-Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
+## Description
+*Short paragraph (2-3 sentences) "elevator pitch" describing what your project does*
 
-### User Stories
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-### Wireframes
+## User Stories
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+5. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-### Technologies (languages, external libraries, APIs)
+## Wireframes
+
+## Technologies
+*(languages, external libraries, APIs)*
 - Ruby on Rails
 - PostgreSQL
 - Active Record
@@ -20,11 +28,18 @@ Short paragraph (2-3 sentences) "elevator pitch" describing what your project do
 - Materialize
 - Embedded Ruby
 
-### Future Development
+## Future Development
+- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet
 
-### Contributors
-Joanne Cabling [https://github.com/jojobeth1]
+## Contributors
+**Joanne Cabling https://github.com/jojobeth1**
 
-Christopher Fujino [https://github.com/christopherfujino]
+**Christopher Fujino https://github.com/christopherfujino**
 
-Daryl Jason Lazaro [http://github.com/dalazaro]
+**Daryl Jason Lazaro https://github.com/dalazaro**
