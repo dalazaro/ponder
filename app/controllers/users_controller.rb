@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # post "/users", to: "users#create"
   def create
     @user = User.create(params.require(:user).permit(:username, :password, :email))
+    login(@user)
     redirect_to user_path(@user)
   end
   # get "/users/:id", to: "users#show", as: "user"

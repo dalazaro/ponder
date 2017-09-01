@@ -5,7 +5,14 @@
     </div>
     <div class="col">
       <p>
-        <%= link_to 'login', login_path %> / <%= link_to 'sign up', new_user_path %>
+        <% user = current_user %>
+        <% if user %>
+          Hello <%= link_to user.username, user_path(user.id) %> /
+          <%= link_to "log out", logout_path %>
+        <% else %>
+          <%= link_to 'login', login_path %> /
+          <%= link_to 'sign up', new_user_path %>
+        <% end %>
       </p>
     </div>
   </div>
