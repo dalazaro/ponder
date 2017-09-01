@@ -1,0 +1,29 @@
+<p>
+  Username: <%= @user.username %>
+</p>
+<p>
+  Full name: <%= "#{@user.first_name} #{@user.last_name}" %>
+</p>
+<p>
+  E-mail: <%= @user.email %>
+</p>
+<div>Bio:</div>
+<p>
+  <%= @user.bio %>
+</p>
+<ul>
+  <li>
+    <%= button_to "New Post", new_post_path(@user), method: :get %>
+  <li>
+    <%= button_to "Edit", edit_user_path(@user), method: :get %>
+  </li>
+  <li>
+    <%= button_to "Delete", @user, method: :delete %>
+  </li>
+</ul>
+<h3>Posts</h3>
+<% @posts.each do |post| %>
+  <p>
+    <%= link_to post.title, post_path(@user.id, post.id) %>
+  </p>
+<% end %>
