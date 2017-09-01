@@ -1,24 +1,26 @@
-# README
+# Ponder
+<Link to Heroku hosted project>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
+Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
 
-Things you may want to cover:
+### User Stories
 
-* Ruby version
+### Wireframes
 
-* System dependencies
+### Technologies (languages, external libraries, APIs)
+- Ruby on Rails
+- PostgreSQL
+- Active Record
+- bcrypt 
+- Heroku
+- HTML
+- Materialize
+- Embedded Ruby
 
-* Configuration
+### Future Development
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Contributors
+Joanne Cabling [https://github.com/jojobeth1]
+Christopher Fujino [https://github.com/christopherfujino]
+Daryl Jason Lazaro [http://github.com/dalazaro]
