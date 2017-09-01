@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     post = Post.new(params.require(:post).permit(:title, :content))
     post.user_id = params[:user_id]
     if post.save  #if save was successful, redirect
-      redirect_to post_path
+      redirect_to user_path(params[:user_id])
     end
   end
   # get "/users/:user_id/posts/:post_id", to: "posts#show"
