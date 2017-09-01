@@ -36,5 +36,4 @@ class PostsController < ApplicationController
     post.destroy # delete this post from db
     redirect_to user_path(params[:user_id])
   end
-
 end
