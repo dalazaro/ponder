@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete "/users/:id", to: "users#destroy", as: "delete_user"
 
   get "/login", to: "sessions#new"
-  post "/sessions/:id", to: "sessions#create"
+  post "/sessions", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
 
   get "/users/:user_id/posts", to: "posts#index", as: "posts"
@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   get "/users/:user_id/posts/:post_id/edit", to: "posts#edit", as: "edit_post"
   patch "/users/:user_id/posts/:post_id", to: "posts#update"
   delete "/users/:user_id/posts/:post_id", to: "posts#destroy"
+
 
 end
