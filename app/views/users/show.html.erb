@@ -21,3 +21,9 @@
     <%= button_to "Delete", @user, method: :delete %>
   </li>
 </ul>
+<h3>Posts</h3>
+<% @posts.each do |post| %>
+  <p>
+    <%= link_to post.title, post_path(@user.id, post.id) %>
+  </p>
+<% end %>

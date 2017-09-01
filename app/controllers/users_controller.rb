@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # get "/users/:id", to: "users#show", as: "user"
   def show
     @user = User.find_by_id(params[:id])
+    @posts = Post.where user_id: params[:id]
   end
   # get "/users/:id/edit", to: "users#edit", as: "edit_user"
   def edit
