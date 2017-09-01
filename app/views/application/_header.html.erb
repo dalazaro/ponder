@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>PONDER!</h1>
+    </div>
+    <div class="col">
+      <p>
+        <% user = current_user %>
+        <% if user %>
+          Hello <%= link_to user.username, user_path(user.id) %> /
+          <%= link_to "log out", logout_path %>
+        <% else %>
+          <%= link_to 'login', login_path %> /
+          <%= link_to 'sign up', new_user_path %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+
+</div>
+<hr />
