@@ -14,6 +14,8 @@ Short paragraph (2-3 sentences) "elevator pitch" describing what your project do
 - Active Record
 - bcrypt 
 - Heroku
+- JavaScript
+- JQuery
 - HTML
 - Materialize
 - Embedded Ruby
@@ -22,5 +24,7 @@ Short paragraph (2-3 sentences) "elevator pitch" describing what your project do
 
 ### Contributors
 Joanne Cabling [https://github.com/jojobeth1]
+
 Christopher Fujino [https://github.com/christopherfujino]
+
 Daryl Jason Lazaro [http://github.com/dalazaro]
