@@ -1,7 +1,11 @@
 <h3>Ponder Posts:</h3>
-<% @posts.each do |post| %>
-  <div>
-    <h2><%= post.title %></h2>
-    <p><%= post.content %></p>
-  </div>
-<% end %>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <div>
+        <%= link_to post.title, post_path(post.user_id, post.id) %>
+      </div>
+      <p><%= post.content %></p>
+    </li>
+  <% end %>
+</ul>
