@@ -3,5 +3,8 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
   #methods for API documentation, splash page
+  def splash
+    render('../views/splash')
+  end
   #format: json render: partial => "users/show"
 end
