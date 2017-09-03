@@ -1,21 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>PONDER!</h1>
-    </div>
-    <div class="col">
-      <p>
-        <% user = current_user %>
-        <% if user %>
-          Hello <%= link_to user.username, user_path(user.id) %> /
-          <%= link_to "log out", logout_path %>
-        <% else %>
-          <%= link_to 'login', login_path %> /
-          <%= link_to 'sign up', new_user_path %>
-        <% end %>
-      </p>
-    </div>
+<nav class="grey darken-3 z-depth-0">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">PONDER</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% user = current_user %>
+      <% if user %>
+        <li>Hello <%= link_to user.username, user_path(user.id) %></li>
+        <li><%= link_to "log out", logout_path %></li>
+      <% else %>
+        <li><%= link_to 'login', login_path %></li>
+        <li><%= link_to 'sign up', new_user_path %></li>
+      <% end %>
+    </ul>
   </div>
-
-</div>
-<hr />
+</nav>
