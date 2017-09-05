@@ -23,6 +23,10 @@
       <%= f.email_field :email, class: "edit-field" %>
     </div>
 
+    <div>
+      <label>Your Photo</label>
+      <%= f.file_field :image %>
+    </div>
     <%= f.submit "Save Changes", class: "waves-effect waves-light btn" %>
 
   <% end %>
