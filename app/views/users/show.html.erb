@@ -39,7 +39,6 @@
       <% @posts.each do |post| %>
         <h4><%= link_to "#{post.title}", post_path(post.id) %></h4>
         <p><%= post.content %></p>
-        
       <% end %>
     </div>
   </div>
