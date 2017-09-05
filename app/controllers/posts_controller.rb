@@ -41,14 +41,22 @@ class PostsController < ApplicationController
   # get "/posts/:post_id/edit", to: "posts#edit"
   def edit
     @post = Post.find_by_id(params[:post_id])
+    if @post.user_id != session[:user_id]
+      flash[:error] = "You are not authorized to edit this post."
+      redirect_to post_path(params[:post_id])
+    end
   end
 
   # patch "/posts/:post_id", to: "posts#update"
   def update
     post_params = params.require(:post).permit(:title, :content)
     post = Post.find_by_id(params[:post_id])
-    # TODO error handling!
-    post.update_attributes(post_params)
+    # user authorization
+    if post.user_id != session[:user_id]
+      flash[:error] = "You are not authorized to edit this post."
+    else
+      post.update_attributes(post_params)
+    end
     redirect_to post_path post
   end
 
