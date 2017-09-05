@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
   # patch "/users/:id", to: "users#update"
   def update
-    user_params = params.require(:user).permit(:first_name, :last_name, :bio, :email)
+    user_params = params.require(:user).permit(:first_name, :last_name, :bio, :email, :image)
     if params[:id].to_i != session[:user_id]
       flash[:error] = "You are not authorized to edit this user's profile."
       redirect_to user_path params[:id]
