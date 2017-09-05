@@ -36,7 +36,7 @@
   <% end %>
 
   <div class="right">
-    <%= button_to "Delete Account", @user, method: :delete, class: "btn" %>
+    <%= button_to "Delete Account", @user, method: :delete, class: "btn", data: {confirm: "Are you sure?"}%>
   </div>
 
 </div>
