@@ -1,19 +1,34 @@
-<%= form_for @user do |f| %>
-  <div>
-    <label>First name</label>
-    <%= f.text_field :first_name %>
+<div class="container">
+  <h2 class="center">Edit Profile</h2>
+
+  <%= form_for @user do |f| %>
+    <div class="row">
+      <div class="col m6 s12">
+        <label>First name</label>
+        <%= f.text_field :first_name, class: "edit-field" %>
+      </div>
+      <div class="col m6 s12">
+        <label>Last name</label>
+        <%= f.text_field :last_name, class: "edit-field" %>
+      </div>
+    </div>
+
+    <div>
+      <label>Bio</label>
+      <%= f.text_area :bio, class: "materialize-textarea edit-field" %>
+    </div>
+
+    <div>
+      <label>E-mail address</label>
+      <%= f.email_field :email, class: "edit-field" %>
+    </div>
+
+    <%= f.submit "Save Changes", class: "waves-effect waves-light btn" %>
+
+  <% end %>
+
+  <div class="right">
+    <%= button_to "Delete Account", @user, method: :delete, class: "waves-effect waves-light btn" %>
   </div>
-  <div>
-    <label>Last name</label>
-    <%= f.text_field :last_name %>
-  </div>
-  <div>
-    <label>Bio</label>
-    <%= f.text_area :bio %>
-  </div>
-  <div>
-    <label>E-mail address</label>
-    <%= f.email_field :email %>
-  </div>
-  <%= f.submit "Save" %>
-<% end %>
+
+</div>
