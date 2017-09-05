@@ -1,22 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-10">
-
-      <img src="/images/PONDER-06.svg" width= "150px" alt="Ponder Logo" id="logo"/>
-    </div>
-    <div class="col-2" style="float: right;">
-      <p>
-        <% user = current_user %>
-        <% if user %>
-          Hello <%= link_to user.username, user_path(user.id) %> /
-          <%= link_to "log out", logout_path %>
-        <% else %>
-          <%= link_to 'login', login_path %> /
-          <%= link_to 'sign up', new_user_path %>
-        <% end %>
-      </p>
+<nav>
+  <div class="nav-wrapper">
+      <a href="#" class="brand-logo">PONDER
+        <!--<img src="/images/PONDER-06.svg" width= "150px" alt="Ponder Logo" id="logo"/>-->
+      </a>
+      <div class="col-2" style="float: right;">
+        <p>
+          <% user = current_user %>
+          <% if user %>
+            Hello <%= link_to user.username, user_path(user.id) %> /
+            <%= link_to "log out", logout_path %>
+          <% else %>
+            <%= link_to 'login', login_path %> /
+            <%= link_to 'sign up', new_user_path %>
+          <% end %>
+        </p>
+      </div>
     </div>
   </div>
-
-</div>
+</nav>
 <hr />
