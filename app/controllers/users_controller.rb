@@ -30,19 +30,30 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     @posts = Post.where user_id: params[:id]
+    @posts = @posts.reverse
   end
 
   # get "/users/:id/edit", to: "users#edit", as: "edit_user"
   def edit
-    @user = User.find_by_id(params[:id])
+    if params[:id].to_i != session[:user_id]
+      flash[:error] = "You are not authorized to edit this user's profile."
+      redirect_to user_path params[:id]
+    else
+      @user = User.find_by_id(params[:id])
+    end
   end
 
   # patch "/users/:id", to: "users#update"
   def update
     user_params = params.require(:user).permit(:first_name, :last_name, :bio, :email, :image)
-    user = User.find_by_id(params[:id])
-    user.update_attributes(user_params)
-    redirect_to user_path user
+    if params[:id].to_i != session[:user_id]
+      flash[:error] = "You are not authorized to edit this user's profile."
+      redirect_to user_path params[:id]
+    else
+      user = User.find_by_id(params[:id])
+      user.update_attributes(user_params)
+      redirect_to user_path user
+    end
   end
 
   # delete "/users/:id", to: "users#destroy", as: "delete_user"
