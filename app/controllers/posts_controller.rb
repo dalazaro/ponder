@@ -3,16 +3,24 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  # get "/users/:user_id/posts/new", to: "posts#new"
+  # get "/posts/new", to: "posts#new"
   def new
-    @post = Post.new
+    if session[:user_id] != nil
+      @post = Post.new
+    else
+      flash[:error] = "Before you start pondering, please create an account or log in."
+      redirect_to new_user_path
+    end
   end
 
-  # post "/users/:user_id/posts", to: "posts#create"
+  # post "/posts", to: "posts#create"
   def create
     post_params = params.require(:post).permit(:title, :content)
     p "length is " + post_params[:content].length.to_s
-    if post_params[:content].length > 1000
+    if session[:user_id] == nil
+      flash[:error] = "Before you start pondering, please create an account or log in."
+      redirect_to new_user_path
+    elsif post_params[:content].length > 1000
       #TODO resolve, since this counts escaped chars (e.g. "\n") as 2
       flash[:error] = "Post cannot be longer than 1000 characters."
       redirect_to new_post_path
@@ -25,26 +33,34 @@ class PostsController < ApplicationController
     end
   end
 
-  # get "/users/:user_id/posts/:post_id", to: "posts#show"
+  # get "/posts/:post_id", to: "posts#show"
   def show
     @post = Post.find_by_id(params[:post_id])
   end
 
-  # get "/users/:user_id/posts/:post_id/edit", to: "posts#edit"
+  # get "/posts/:post_id/edit", to: "posts#edit"
   def edit
     @post = Post.find_by_id(params[:post_id])
+    if @post.user_id != session[:user_id]
+      flash[:error] = "You are not authorized to edit this post."
+      redirect_to post_path(params[:post_id])
+    end
   end
 
-  # patch "/users/:user_id/posts/:post_id", to: "posts#update"
+  # patch "/posts/:post_id", to: "posts#update"
   def update
     post_params = params.require(:post).permit(:title, :content)
     post = Post.find_by_id(params[:post_id])
-    # TODO error handling!
-    post.update_attributes(post_params)
+    # user authorization
+    if post.user_id != session[:user_id]
+      flash[:error] = "You are not authorized to edit this post."
+    else
+      post.update_attributes(post_params)
+    end
     redirect_to post_path post
   end
 
-  # delete "/users/:user_id/posts/:post_id", to: "posts#destroy"
+  # delete "/posts/:post_id", to: "posts#destroy"
   def destroy
     post = Post.find_by_id(params[:post_id])
     post.destroy # delete this post from db

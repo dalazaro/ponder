@@ -3,7 +3,7 @@
   <% @posts.each do |post| %>
     <li>
       <div>
-        <%= link_to post.title, post_path(post.user_id, post.id) %>
+        <%= link_to post.title, post_path(post.id) %>
       </div>
       <p><%= post.content %></p>
     </li>
