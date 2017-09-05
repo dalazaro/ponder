@@ -3,7 +3,7 @@
   <!-- Sidebar -->
   <div class="col l4 user-profile hide-on-med-and-down">
     <div>
-      <%= image_tag "https://avatars1.githubusercontent.com/u/27825269?v=4&s=460", class: "responsive-img profile-img" %>
+      <%= image_tag @user.image.url(:medium), class: "responsive-img profile-img" %>
     </div>
 
     <div class="col profile-info">
