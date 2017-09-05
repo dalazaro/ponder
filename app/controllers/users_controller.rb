@@ -7,13 +7,17 @@ class UsersController < ApplicationController
   # post "/users", to: "users#create"
   def create
     user_params = params.require(:user).permit(:username, :password, :email)
-    prev_username = User.find_by username: user_params[:username]
-    prev_email = User.find_by email: user_params[:email]
-    if prev_username
+    if (User.find_by username: user_params[:username]) #check for pre-existing username
       flash[:error] = "A user with the username \"#{user_params[:username]}\" already exists."
       redirect_to new_user_path
-    elsif prev_email
+    elsif (User.find_by email: user_params[:email]) #check for pre-existing e-mail
       flash[:error] = "A user with the e-mail address \"#{user_params[:email]}\" already exists."
+      redirect_to new_user_path
+    elsif user_params[:email] !~ /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/ #validate e-mail
+      flash[:error] = "\"#{user_params[:email]}\" is not a valid e-mail address."
+      redirect_to new_user_path
+    elsif user_params[:password].length < 8
+      flash[:error] = "Password must be at least 8 characters long."
       redirect_to new_user_path
     else
       @user = User.create(user_params)

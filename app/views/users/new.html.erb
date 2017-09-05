@@ -9,7 +9,7 @@
   </div>
   <div>
     <label>Password</label>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, minlength: 8 %>
   </div>
   <%= f.submit "Create Account" %>
 <% end %>
