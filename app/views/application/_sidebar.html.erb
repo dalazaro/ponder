@@ -1,5 +1,5 @@
 <div class="col l4 user-profile hide-on-med-and-down">
-  <div><%= image_tag @user.image.url(:large),{:class => ''}%></div>
+  <div><%= image_tag @user.image.url(:large),{:class => 'responsive-img profile-img'}%></div>
 
   <div class="col profile-info">
     <h3 class="fullname"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
