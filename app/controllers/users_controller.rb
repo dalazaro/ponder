@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   # delete "/users/:id", to: "users#destroy", as: "delete_user"
   def destroy
     user = User.find_by_id(params[:id])
-    user.destroy # gone
+    user.destroy
     redirect_to new_user_path
   end
 end

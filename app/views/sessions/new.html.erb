@@ -1,5 +1,18 @@
-<%= form_for @user, url: "/sessions", method: "post" do |f| %>
-  <%= f.email_field :email, placeholder: "email" %><br />
-  <%= f.password_field :password %><br />
-  <%= f.submit "Log In" %>
-<% end %>
+<div class="container">
+  <h2 class="center">Log In</h2>
+  <%= form_for @user, url: "/sessions", method: "post" do |f| %>
+    <div class="row">
+      <div class="col m6">
+        <label class="left">Email</label>
+        <%= f.email_field :email %>
+      </div>
+      <div class="col m6">
+        <label class="left">Password</label>
+        <%= f.password_field :password %>
+      </div>
+    </div>
+    <div>
+      <%= f.submit "Log In", class: "waves-effect waves-light btn" %>
+    </div>
+  <% end %>
+</div>

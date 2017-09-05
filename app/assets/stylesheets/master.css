@@ -1,0 +1,61 @@
+body {
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+}
+
+.mobile-menu {
+  color: #212121;
+}
+
+.post-section {
+  margin-top: 30px;
+}
+
+.post-title {
+  font-size: 40px;
+  margin: 0;
+}
+
+.new-post-button {
+  margin-top: 5px;
+}
+
+.user-profile{
+  margin-top: 30px;
+}
+
+.profile-img {
+  border-radius: 10px;
+  padding: 0;
+}
+
+.profile-info {
+  margin-top: 15px;
+}
+
+.fullname {
+  font-size: 40px;
+  margin: 0;
+}
+
+.username {
+  font-size: 32px;
+  margin: 0;
+}
+
+.bio{
+  font-size: 20px;
+  margin: 0;
+}
+
+.post-title {
+  font-size: 40px !important;
+}
+
+.post-content {
+  font-size: 20px !important;
+}
+
+.edit-field {
+  font-size: 20px !important;
+}
