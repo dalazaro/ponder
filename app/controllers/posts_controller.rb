@@ -8,15 +8,22 @@ class PostsController < ApplicationController
   end
   # post "/users/:user_id/posts", to: "posts#create"
   def create
-    post = Post.new(params.require(:post).permit(:title, :content))
-    post.user_id = params[:user_id]
-    if post.save  #if save was successful, redirect
-      redirect_to user_path(params[:user_id])
+    post_params = params.require(:post).permit(:title, :content)
+    p "length is " + post_params[:content].length.to_s
+    if post_params[:content].length > 1000
+      #TODO resolve, since this counts escaped chars (e.g. "\n") as 2
+      flash[:error] = "Post cannot be longer than 1000 characters."
+      redirect_to new_post_path
+    else
+      post = Post.new(post_params)
+      post.user_id = params[:user_id]
+      if post.save  #if save was successful, redirect
+        redirect_to user_path(params[:user_id])
+      end
     end
   end
   # get "/users/:user_id/posts/:post_id", to: "posts#show"
   def show
-    p "in the show controller, user id: " + params[:user_id]
     @post = Post.find_by_id(params[:post_id])
   end
   # get "/users/:user_id/posts/:post_id/edit", to: "posts#edit"
@@ -27,6 +34,7 @@ class PostsController < ApplicationController
   def update
     post_params = params.require(:post).permit(:title, :content)
     post = Post.find_by_id(params[:post_id])
+    # TODO error handling!
     post.update_attributes(post_params)
     redirect_to post_path post
   end
