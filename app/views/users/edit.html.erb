@@ -33,13 +33,23 @@
     <div>
     <%= f.submit "Save Changes", class: "btn" %>
     </div>
+    <div class="right">
+      <a class="btn modal-trigger" href="#deleteConfirm">Delete Account</a>
+    </div>
   <% end %>
-
-  <div class="right">
-    <%= button_to "Delete Account", @user, method: :delete, class: "btn", data: {confirm: "Are you sure?"}%>
-  </div>
-
 </div>
+
+<!-- Modal Structure -->
+<div id="deleteConfirm" class="modal">
+  <div class="modal-content">
+    <p>You are about to delete your account. Are you sure you want to do this?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn-flat">Disagree</a>
+    <%= link_to "Agree", delete_user_path(@user), method: :delete, class: "modal-action modal-close btn-flat" %>
+  </div>
+</div>
+
 <script>
 $(function(){
   // on DOM load, attach event listener
