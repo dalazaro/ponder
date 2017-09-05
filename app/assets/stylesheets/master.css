@@ -12,15 +12,12 @@ body {
 }
 
 .post-title {
-  font-size: 40px;
+  font-size: 2em;
+  font-weight: 700;
   margin: 0;
 }
 
-.new-post-button {
-  margin-top: 5px;
-}
-
-.user-profile{
+.user-profile {
   margin-top: 30px;
 }
 
@@ -35,6 +32,7 @@ body {
 
 .fullname {
   font-size: 1.5em;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -48,11 +46,12 @@ body {
   margin: 0;
 }
 
-.post-title {
-  font-size: 40px !important;
+.form-title {
+  font-size: 1.75em !important;
+  font-weight: 700;
 }
 
-.post-content {
+.form-content {
   font-size: 20px !important;
 }
 
