@@ -7,12 +7,12 @@
         <h2 class="post-title">Posts</h2>
       </div>
       <div class="col l6 new-post-button">
-        <%= button_to "New Post", new_post_path(@user), method: :get, class: "waves-effect waves-light btn right" %>
+        <%= button_to "New Post", new_post_path, method: :get, class: "waves-effect waves-light btn right" %>
       </div>
     </div>
     <div class="posts">
       <% @posts.each do |post| %>
-        <h4><%= link_to "#{post.title}", post_path(@user.id, post.id) %></h4>
+        <h4><%= link_to "#{post.title}", post_path(post.id) %></h4>
         <p><%= post.content %></p>
         
       <% end %>
