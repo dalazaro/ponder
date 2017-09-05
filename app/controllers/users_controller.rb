@@ -5,9 +5,16 @@ class UsersController < ApplicationController
   end
   # post "/users", to: "users#create"
   def create
-    @user = User.create(params.require(:user).permit(:username, :password, :email))
-    login(@user)
-    redirect_to user_path(@user)
+    user_params = params.require(:user).permit(:username, :password, :email)
+    prev_user = User.find_by username: user_params[:username]
+    if prev_user
+      flash[:error] = "A user with the username \"#{user_params[:username]}\" already exists."
+      redirect_to new_user_path
+    else
+      @user = User.create(user_params)
+      login(@user)
+      redirect_to user_path(@user)
+    end
   end
   # get "/users/:id", to: "users#show", as: "user"
   def show

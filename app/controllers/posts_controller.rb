@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
   # get "/users/:user_id/posts/:post_id", to: "posts#show"
   def show
-    p "in the show controller, user id: " + params[:user_id]
     @post = Post.find_by_id(params[:post_id])
   end
   # get "/users/:user_id/posts/:post_id/edit", to: "posts#edit"
@@ -27,6 +26,7 @@ class PostsController < ApplicationController
   def update
     post_params = params.require(:post).permit(:title, :content)
     post = Post.find_by_id(params[:post_id])
+    # TODO error handling!
     post.update_attributes(post_params)
     redirect_to post_path post
   end
