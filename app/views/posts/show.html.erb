@@ -9,8 +9,7 @@
     </div>
 
     <div class="right">
-      <%= button_to "Delete", "/users/#{@post.user_id}/posts/#{@post.id}", method: :delete, class: "waves-effect waves-light btn" %>
+      <%= button_to "Delete", "/posts/#{@post.id}", method: :delete, class: "waves-effect waves-light btn" %>
     </div>
   </div>
-
 </div>
