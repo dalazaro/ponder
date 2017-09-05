@@ -5,14 +5,22 @@ class PostsController < ApplicationController
 
   # get "/posts/new", to: "posts#new"
   def new
-    @post = Post.new
+    if session[:user_id] != nil
+      @post = Post.new
+    else
+      flash[:error] = "Before you start pondering, please create an account or log in."
+      redirect_to new_user_path
+    end
   end
 
   # post "/posts", to: "posts#create"
   def create
     post_params = params.require(:post).permit(:title, :content)
     p "length is " + post_params[:content].length.to_s
-    if post_params[:content].length > 1000
+    if session[:user_id] == nil
+      flash[:error] = "Before you start pondering, please create an account or log in."
+      redirect_to new_user_path
+    elsif post_params[:content].length > 1000
       #TODO resolve, since this counts escaped chars (e.g. "\n") as 2
       flash[:error] = "Post cannot be longer than 1000 characters."
       redirect_to new_post_path
