@@ -1,10 +1,16 @@
-<h2><%= @post.title %></h2>
-<p><%= @post.content %></p>
-<ul>
-  <li>
-    <%= button_to "Edit", edit_post_path(@post), method: :get %>
-  </li>
-  <li>
-    <%= button_to "Delete", "/users/#{@post.user_id}/posts/#{@post.id}", method: :delete %>
-  </li>
-</ul>
+<div class="container">
+  <h2 class="center"><%= @post.title %></h2>
+
+  <p><%= @post.content %></p>
+
+  <div class="row">
+    <div class="left">
+      <%= button_to "Edit", edit_post_path(@post), method: :get, class: "waves-effect waves-light btn" %>
+    </div>
+
+    <div class="right">
+      <%= button_to "Delete", "/users/#{@post.user_id}/posts/#{@post.id}", method: :delete, class: "waves-effect waves-light btn" %>
+    </div>
+  </div>
+
+</div>

@@ -1,29 +1,20 @@
-<p>
-  Username: <%= @user.username %>
-</p>
-<p>
-  Full name: <%= "#{@user.first_name} #{@user.last_name}" %>
-</p>
-<p>
-  E-mail: <%= @user.email %>
-</p>
-<div>Bio:</div>
-<p>
-  <%= @user.bio %>
-</p>
-<ul>
-  <li>
-    <%= button_to "New Post", new_post_path(@user), method: :get %>
-  <li>
-    <%= button_to "Edit", edit_user_path(@user), method: :get %>
-  </li>
-  <li>
-    <%= button_to "Delete", @user, method: :delete %>
-  </li>
-</ul>
-<h3>Posts</h3>
-<% @posts.each do |post| %>
-  <p>
-    <%= link_to post.title, post_path(@user.id, post.id) %>
-  </p>
-<% end %>
+<div class="row container">
+  <%= render partial: 'sidebar' %>
+
+  <div class="col l8 post-section">
+    <div class="row">
+      <div class="col l6">
+        <h2 class="post-title">Posts</h2>
+      </div>
+      <div class="col l6 new-post-button">
+        <%= button_to "New Post", new_post_path(@user), method: :get, class: "waves-effect waves-light btn right" %>
+      </div>
+    </div>
+    <div class="posts">
+      <% @posts.each do |post| %>
+        <h4><%= link_to "#{post.title}", post_path(@user.id, post.id) %></h4>
+        <p><%= post.content %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

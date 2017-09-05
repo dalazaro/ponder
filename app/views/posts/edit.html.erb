@@ -1,11 +1,4 @@
-<%= form_for @post do |f| %>
-<div>
-  <label>Title:</label>
-  <%= f.text_field :title %>
+<div class="container">
+  <h2 class="center">Edit Post</h2>
+  <%= render partial: 'postform' %>
 </div>
-<div>
-  <label>Content</label>
-  <%= f.text_area :content %>
-</div>
-<%= f.submit "Save" %>
-<% end %>

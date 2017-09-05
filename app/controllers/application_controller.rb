@@ -2,9 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include SessionsHelper
-  #methods for API documentation, splash page
+  
+  # method for splash page
   def splash
     render('../views/splash')
   end
-  #format: json render: partial => "users/show"
+
+  # method for API doc, format: json render: partial => "users/show"
 end

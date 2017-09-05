@@ -1,15 +1,47 @@
-<nav class="grey darken-3 z-depth-0">
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">PONDER</a>
+<nav class="transparent z-depth-1">
+  <div class="nav-wrapper container">
+
+    <!-- Mobile Sidebar Menu -->
+    <% if @user %>
+      <ul id="slide-out" class="side-nav">
+        <li><div class="user-view">
+          <div>
+            <%= image_tag "https://avatars1.githubusercontent.com/u/27825269?v=4&s=460", class: "responsive-img profile-img" %>
+          </div>
+
+          <h3 class="fullname grey-text text-darken-4"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+
+          <h4 class="username grey-text text-darken-1"><%= @user.username %></h4>
+
+          <div class="bio grey-text text-darken-1">
+            <p><i><%= @user.bio %></i></p>
+          </div>
+
+          <%= link_to "Log Out", logout_path, class: "grey-text text-darken-4" %>
+        </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons mobile-menu">menu</i></a>
+    <% end %>
+
+    <!-- Ponder Logo -->
+    <a class="brand-logo grey-text text-darken-4">PONDER</a>
+
+    <!-- Desktop Navigation -->
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% user = current_user %>
       <% if user %>
-        <li>Hello <%= link_to user.username, user_path(user.id) %></li>
-        <li><%= link_to "log out", logout_path %></li>
+        <li><%= link_to "Welcome, #{user.username}!", user_path(user), class: "grey-text text-darken-4" %></li>
+        <li><%= link_to "Log Out", logout_path, class: "grey-text text-darken-4" %></li>
       <% else %>
-        <li><%= link_to 'login', login_path %></li>
-        <li><%= link_to 'sign up', new_user_path %></li>
+        <li><%= link_to 'Create an Account', new_user_path, class: "grey-text text-darken-4" %></li>
+        <li><%= link_to 'Log In', login_path, class: "grey-text text-darken-4" %></li>
       <% end %>
     </ul>
+
   </div>
 </nav>
