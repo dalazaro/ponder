@@ -5,7 +5,10 @@
 </div>
 <div>
   <label>Content</label>
-  <%= f.text_area :content %>
+  <%= f.text_area :content, oninput: "document.getElementById('charCount').innerHTML=this.value.length", maxlength: 1000 %>
+</div>
+<div>
+  <span id="charCount">0</span>/1000
 </div>
 <%= f.submit "Submit" %>
 <% end %>
