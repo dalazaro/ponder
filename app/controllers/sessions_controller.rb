@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
     @user = User.new
   end
-  
+
   # post "/sessions", to: "sessions#create"
   def create
     @user = User.confirm(user_params)
