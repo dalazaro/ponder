@@ -25,7 +25,10 @@
 
     <div>
       <label>Your Photo</label>
-      <%= f.file_field :image %>
+      <%= f.file_field :image, class:"image-input" %>
+    </div>
+    <div id="image-preview">
+
     </div>
     <div>
     <%= f.submit "Save Changes", class: "waves-effect waves-light btn" %>
@@ -37,3 +40,21 @@
   </div>
 
 </div>
+<script>
+$(function(){
+  $('.image-input').on('change', function(e){
+    var files = e.target.files;
+    var image = files[0]
+    console.log(image.size);
+    var reader = new FileReader();
+    reader.onload = function(file){
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result;
+      $('#image-preview').html(img);
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
+});
+</script>
