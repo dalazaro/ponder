@@ -28,33 +28,31 @@
       <%= f.file_field :image, class:"image-input" %>
     </div>
     <div id="image-preview">
-
+      <!-- uploaded image will be rendered here -->
     </div>
     <div>
-    <%= f.submit "Save Changes", class: "waves-effect waves-light btn" %>
+    <%= f.submit "Save Changes", class: "btn" %>
     </div>
   <% end %>
 
   <div class="right">
-    <%= button_to "Delete Account", @user, method: :delete, class: "waves-effect waves-light btn" %>
+    <%= button_to "Delete Account", @user, method: :delete, class: "btn" %>
   </div>
 
 </div>
 <script>
 $(function(){
+  // on DOM load, attach event listener
   $('.image-input').on('change', function(e){
     var files = e.target.files;
     var image = files[0]
-    console.log(image.size);
     var reader = new FileReader();
     reader.onload = function(file){
       var img = new Image();
-      console.log(file);
       img.src = file.target.result;
       $('#image-preview').html(img);
     }
     reader.readAsDataURL(image);
-    console.log(files);
   });
 });
 </script>
