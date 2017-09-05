@@ -5,6 +5,6 @@
     <%= button_to "Edit", edit_post_path(@post), method: :get %>
   </li>
   <li>
-    <%= button_to "Delete", "/users/#{@post.user_id}/posts/#{@post.id}", method: :delete %>
+    <%= button_to "Delete", "/posts/#{@post.id}", method: :delete %>
   </li>
 </ul>

@@ -16,9 +16,9 @@ class PostsController < ApplicationController
       redirect_to new_post_path
     else
       post = Post.new(post_params)
-      post.user_id = params[:user_id]
+      post.user_id = session[:user_id]
       if post.save  #if save was successful, redirect
-        redirect_to user_path(params[:user_id])
+        redirect_to user_path(session[:user_id])
       end
     end
   end
@@ -42,6 +42,6 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find_by_id(params[:post_id])
     post.destroy # delete this post from db
-    redirect_to user_path(params[:user_id])
+    redirect_to user_path(session[:user_id])
   end
 end
