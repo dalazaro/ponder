@@ -17,13 +17,12 @@
 
     <div class="bio grey-text text-darken-1">
       <p><i><%= @user.bio %></i></p>
-
+    </div>
     <% if is_owner %>
       <div>
         <a class="btn" href=<%= edit_user_path %>>Edit Profile</a>
       </div>
     <% end %>
-
   </div>
 
   <!-- Posts Section -->
