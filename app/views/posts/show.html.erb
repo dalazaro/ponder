@@ -5,11 +5,11 @@
 
   <div class="row">
     <div class="left">
-      <%= button_to "Edit", edit_post_path(@post), method: :get, class: "waves-effect waves-light btn" %>
+      <%= button_to "Edit", edit_post_path(@post), method: :get, class: "btn" %>
     </div>
 
     <div class="right">
-      <%= button_to "Delete", "/posts/#{@post.id}", method: :delete, class: "waves-effect waves-light btn" %>
+      <%= button_to "Delete", "/posts/#{@post.id}", method: :delete, class: "btn" %>
     </div>
   </div>
 </div>

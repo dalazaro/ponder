@@ -17,7 +17,7 @@
 
       <% if is_owner %>
         <div>
-          <a class="waves-effect waves-light btn" href=<%= edit_user_path %>>Edit Profile</a>
+          <a class="btn" href=<%= edit_user_path %>>Edit Profile</a>
         </div>
       <% end %>
     </div>
@@ -31,7 +31,7 @@
       </div>
       <% if is_owner %>
         <div class="col l6 new-post-button">
-          <%= button_to "New Post", new_post_path, method: :get, class: "waves-effect waves-light btn right" %>
+          <%= button_to "New Post", new_post_path, method: :get, class: "btn right" %>
         </div>
       <% end %>
     </div>
