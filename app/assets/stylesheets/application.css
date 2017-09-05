@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.btn{
+  background-color: black;
+}
+#logo{
+  margin-top: 2em;
+}
