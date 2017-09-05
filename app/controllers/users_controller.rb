@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     @posts = Post.where user_id: params[:id]
+    @posts = @posts.reverse
   end
 
   # get "/users/:id/edit", to: "users#edit", as: "edit_user"
