@@ -1,7 +1,12 @@
 <% user = current_user %>
 <% is_owner = user ? user.id == @post.user_id : false %>
+<% author = User.find(@post.user_id).username %>
+
 <div class="container page-view">
-  <h2 class="center"><%= @post.title %></h2>
+  <h2 class="center post-headline"><%= @post.title %></h2>
+  <h4 class="center post-author">
+    by <a href="/users/<%= author %>"><%= author %></a>
+  </h4>
 
   <p><%= @post.content %></p>
 
