@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
   <div>
     <label>Title</label>
-    <%= f.text_field :title, placeholder: "Enter your title here...", minlength: 1, class: "form-title" %>
+    <%= f.text_field :title, placeholder: "Enter your title here...", required: "true", minlength: 1, class: "form-title" %>
   </div>
 
   <div>
@@ -15,11 +15,11 @@
   </div>
 
   <div>
-    <span id="charCounter">0</span>/1000
+    <span id="charCounter"><%= !@post.content ? "0" : @post.content.length %></span>/1000
   </div>
 
   <div>
-    <% #TODO change whether edit or new %>
-    <%= f.submit "Submit", class: "btn" %>
+    <% label = @post.content ? "Save" : "Submit" %>
+    <%= f.submit label, class: "btn" %>
   </div>
 <% end %>
