@@ -37,7 +37,7 @@
   <% end %>
 
   <div class="right" style="margin-top:50px;">
-    <%= button_to "Delete Account", delete_user(@user.username), method: :delete, class: "btn" %>
+    <%= button_to "Delete Account", delete_user_path(@user.username), method: :delete, class: "btn" %>
   </div>
 
 </div>
