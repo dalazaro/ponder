@@ -1,6 +1,13 @@
 body {
   font-family: 'Crimson Text', serif;
   font-size: 18px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .mobile-menu {
@@ -57,4 +64,16 @@ body {
 
 .edit-field {
   font-size: 20px !important;
+}
+
+.footer {
+  height: 100px;
+}
+
+.footer-info {
+  padding: 20px;
+}
+
+.page-view {
+  margin-bottom: 200px;
 }
