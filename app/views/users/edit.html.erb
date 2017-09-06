@@ -34,13 +34,12 @@
     <div style="margin-top:30px;">
       <%= f.submit "Save Changes", class: "btn" %>
     </div>
-    <div class="right">
+    <div class="right" style="margin-top:50px;">
       <a class="btn modal-trigger" href="#deleteConfirm">Delete Account</a>
     </div>
   <% end %>
 </div>
 
-<<<<<<< HEAD
 <!-- Modal Structure -->
 <div id="deleteConfirm" class="modal">
   <div class="modal-content">
@@ -49,10 +48,6 @@
   <div class="modal-footer">
     <a href="#!" class="modal-action modal-close btn-flat">Disagree</a>
     <%= link_to "Agree", delete_user_path(@user), method: :delete, class: "modal-action modal-close btn-flat" %>
-=======
-  <div class="right" style="margin-top:50px;">
-    <%= button_to "Delete Account", delete_user_path(@user.username), method: :delete, class: "btn" %>
->>>>>>> eac29625a83072f7872462d37b041055a120e7f5
   </div>
 </div>
 
