@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # get "/posts/new", to: "posts#new"
   def new
-    if session[:user_id] != nil
+    if session[:user_id]
       @post = Post.new
     else
       flash[:error] = "Before you start pondering, please create an account or log in."
@@ -16,8 +16,9 @@ class PostsController < ApplicationController
   # post "/posts", to: "posts#create"
   def create
     post_params = params.require(:post).permit(:title, :content)
+    user_id = session[:user_id]
     p "length is " + post_params[:content].length.to_s
-    if session[:user_id] == nil
+    if user_id == nil
       flash[:error] = "Before you start pondering, please create an account or log in."
       redirect_to new_user_path
     elsif post_params[:title].length < 1
@@ -29,9 +30,10 @@ class PostsController < ApplicationController
       redirect_to new_post_path
     else
       post = Post.new(post_params)
-      post.user_id = session[:user_id]
+      post.user_id = user_id
+      user = User.find_by_id user_id
       if post.save  #if save was successful, redirect
-        redirect_to user_path(session[:user_id])
+        redirect_to user_path user.username
       end
     end
   end
@@ -66,7 +68,12 @@ class PostsController < ApplicationController
   # delete "/posts/:post_id", to: "posts#destroy"
   def destroy
     post = Post.find_by_id(params[:post_id])
-    post.destroy # delete this post from db
-    redirect_to user_path(session[:user_id])
+    if post.user_id != session[:user_id]
+      flash[:error] = "You are not authorized to delete this post."
+    else
+      user = User.find_by_id post.user_id
+      post.destroy # delete this post from db
+      redirect_to user_path(user.username)
+    end
   end
 end

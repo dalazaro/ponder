@@ -12,7 +12,9 @@
       </div>
 
       <div class="col l12 m7 s7">
-        <h3 class="fullname"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+        <% if @user.first_name %>
+          <h3 class="fullname"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+        <% end %>
 
         <h4 class="username grey-text text-darken-1"><%= @user.username %></h4>
       </div>
@@ -20,12 +22,12 @@
 
     <div class="bio grey-text text-darken-1">
       <p><i><%= @user.bio %></i></p>
-
-    <% if is_owner %>
-      <div>
-        <a class="btn" href=<%= edit_user_path %>>Edit Profile</a>
-      </div>
-    <% end %>
+      <% if is_owner %>
+        <div>
+          <a class="btn" href=<%= edit_user_path %>>Edit Profile</a>
+        </div>
+      <% end %>
+    </div>
 
   </div>
 
