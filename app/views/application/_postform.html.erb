@@ -19,7 +19,7 @@
   </div>
 
   <div>
-    <% #TODO change whether edit or new %>
-    <%= f.submit "Submit", class: "btn" %>
+    <% label = @post.content ? "Save" : "Submit" %>
+    <%= f.submit label, class: "btn" %>
   </div>
 <% end %>
