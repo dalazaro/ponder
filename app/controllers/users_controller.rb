@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   # post "/users", to: "users#create"
   def create
-    user_params = params.require(:user).permit(:username, :password, :email)
+    user_params = params.require(:user).permit(:username, :email, :password, :password_confirmation)
     if (User.find_by username: user_params[:username]) #check for pre-existing username
       flash[:error] = "A user with the username \"#{user_params[:username]}\" already exists."
       redirect_to new_user_path
@@ -18,6 +18,9 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     elsif user_params[:password].length < 8
       flash[:error] = "Password must be at least 8 characters long."
+      redirect_to new_user_path
+    elsif user_params[:password] != user_params[:password_confirmation]
+      flash[:error] = "Passwords did not match."
       redirect_to new_user_path
     else
       @user = User.create(user_params)
