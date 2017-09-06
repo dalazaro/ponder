@@ -9,8 +9,17 @@ Ponder is for the people who are tired of getting bombarded with emojis,
 
 
 ### Technologies (languages, external libraries, APIs)
+Built with Ruby on Rails
+Materialize
+Google Fonts
+Paperclip gem
+
 ### Wish List / Future Development
 Future development ideas are: 
 - adding a voting system which will enable users to vote on their
-- 
-### Contributors (with links to their GitHub profiles)
+- following system with RSS feed
+
+### Contributors 
+Joanne Cabling
+Daryl Lazaro
+Christopher Fujino
