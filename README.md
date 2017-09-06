@@ -8,7 +8,7 @@ Ponder is for the people who are tired of getting bombarded with emojis,
 ### http://ponder-blog.herokuapp.com/
 
 
-### Technologies (languages, external libraries, APIs)
+## Technologies (languages, external libraries, APIs)
 Built with Ruby on Rails
 
 Materialize
