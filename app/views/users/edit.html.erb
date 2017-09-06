@@ -1,0 +1,71 @@
+<div class="container page-view">
+  <h2 class="center">Edit Profile</h2>
+
+  <%= form_for @user, url: update_user_path(@user.username) do |f| %>
+    <div class="row">
+      <div class="col m6 s12">
+        <label>First name</label>
+        <%= f.text_field :first_name, class: "edit-field" %>
+      </div>
+      <div class="col m6 s12">
+        <label>Last name</label>
+        <%= f.text_field :last_name, class: "edit-field" %>
+      </div>
+    </div>
+
+    <div>
+      <label>Bio</label>
+      <%= f.text_area :bio, class: "materialize-textarea edit-field text-box" %>
+    </div>
+
+    <div>
+      <label>E-mail address</label>
+      <%= f.email_field :email, class: "edit-field" %>
+    </div>
+
+    <div>
+      <label>Profile Picture</label>
+      <%= f.file_field :image, class:"image-input" %>
+    </div>
+    <div id="image-preview">
+      <!-- uploaded image will be rendered here -->
+    </div>
+
+    <div style="margin-top:30px;">
+      <%= f.submit "Save Changes", class: "btn" %>
+    </div>
+    <div class="right" style="margin-top:50px;">
+      <a class="btn modal-trigger" href="#deleteConfirm">Delete Account</a>
+    </div>
+  <% end %>
+</div>
+
+<!-- Modal Structure -->
+<div id="deleteConfirm" class="modal">
+  <div class="modal-content">
+    <p>You are about to delete your account. Are you sure you want to do this?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn-flat">Disagree</a>
+    <%= link_to "Agree", delete_user_path(@user), method: :delete, class: "modal-action modal-close btn-flat" %>
+  </div>
+</div>
+
+<script>
+$(function(){
+  // on DOM load, attach event listener
+  $('.image-input').on('change', function(e){
+    var files = e.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file){
+      var img = new Image();
+      img.src = file.target.result;
+      $('#image-preview').html(img);
+      $('img').attr('id','avatar');
+      $('img').attr('style','width:300px;height:auto;');
+    }
+    reader.readAsDataURL(image);
+  });
+});
+</script>

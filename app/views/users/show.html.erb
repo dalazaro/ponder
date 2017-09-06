@@ -1,0 +1,54 @@
+<% user = current_user %>
+<% is_owner = user ? user.id == @user.id : false %>
+
+<div class="row container page-view">
+  <!-- Sidebar -->
+  <div class="col l4 user-profile">
+
+    <div class="row">
+      <div class="col l12 m5 s5">
+        <% default_url = "/assets/images/default-avatar.png" %>
+        <% image_url = !@user.image_file_name ? default_url : @user.image.url(:medium) %>
+        <%= image_tag image_url, class: "responsive-img profile-img" %>
+      </div>
+
+      <div class="col l12 m7 s7">
+        <% if @user.first_name %>
+          <h3 class="fullname"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+        <% end %>
+
+        <h4 class="username grey-text text-darken-1"><%= @user.username %></h4>
+      </div>
+    </div>
+
+    <div class="bio grey-text text-darken-1">
+      <p><i><%= @user.bio %></i></p>
+    </div>
+    <% if is_owner %>
+      <div>
+        <a class="btn" href=<%= edit_user_path %>>Edit Profile</a>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Posts Section -->
+  <div class="col l8 post-section">
+    <div>
+      <% if is_owner %>
+        <div class="new-post-button" style="margin-bottom:25px;">
+          <%= button_to "New Post", new_post_path, method: :get, class: "btn" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="posts">
+      <% if @posts.length == 0 %>
+        <h5>Click "New Post" to start writing your very first post.</h5>
+      <% else %>
+        <% @posts.each do |post| %>
+          <h4><%= link_to "#{post.title}", post_path(post.id) %></h4>
+          <p><%= post.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

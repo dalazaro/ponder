@@ -1,0 +1,34 @@
+<% user = current_user %>
+<% is_owner = user ? user.id == @post.user_id : false %>
+<% author = User.find(@post.user_id).username %>
+
+<div class="container page-view">
+  <h2 class="center post-headline"><%= @post.title %></h2>
+  <h4 class="center post-author">
+    by <a href="/users/<%= author %>"><%= author %></a>
+  </h4>
+
+  <p><%= @post.content %></p>
+
+  <% if is_owner %>
+    <div class="row">
+      <div class="left">
+        <%= button_to "Edit", edit_post_path(@post), method: :get, class: "btn" %>
+      </div>
+
+    <div class="right">
+      <a class="btn modal-trigger" href="#deleteConfirm">Delete</a>
+    </div>
+  <% end %>
+</div>
+
+<!-- Modal Structure -->
+<div id="deleteConfirm" class="modal">
+  <div class="modal-content">
+    <p>You are about to delete this post. Are you sure you want to do this?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn-flat">Disagree</a>
+    <%= link_to "Agree", "/posts/#{@post.id}", method: :delete, class: "modal-action modal-close btn-flat" %>
+  </div>
+</div>
