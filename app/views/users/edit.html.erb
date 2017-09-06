@@ -29,27 +29,18 @@
     </div>
     <div id="image-preview">
       <!-- uploaded image will be rendered here -->
-
     </div>
-<<<<<<< HEAD
-    <div>
-=======
+
     <div style="margin-top:30px;">
->>>>>>> dev
       <%= f.submit "Save Changes", class: "btn" %>
     </div>
   <% end %>
 
-<<<<<<< HEAD
-  <div class="right">
-    <%= button_to "Delete Account", delete_user(@user.username), method: :delete, class: "btn" %>
-=======
   <div class="right" style="margin-top:50px;">
     <%= button_to "Delete Account", delete_user_path(@user.username), method: :delete, class: "btn" %>
->>>>>>> dev
   </div>
-
 </div>
+
 <script>
 $(function(){
   // on DOM load, attach event listener
