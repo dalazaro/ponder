@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 
   # get "/users/:username", to: "users#show", as: "user"
   def show
-    p "params[:username] is #{params[:username]}"
     @user = User.find_by username: params[:username]
     @posts = Post.where user_id: @user.id
     @posts = @posts.reverse
