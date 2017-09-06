@@ -18,7 +18,7 @@
     <span id="charCounter"><%= !@post.content ? "0" : @post.content.length %></span>/1000
   </div>
 
-  <div>
+  <div style="margin-top:20px;">
     <% label = @post.content ? "Save" : "Submit" %>
     <%= f.submit label, class: "btn" %>
   </div>
