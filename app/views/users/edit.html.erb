@@ -24,18 +24,20 @@
     </div>
 
     <div>
-      <label>Your Photo</label>
+      <label>Profile Picture</label>
       <%= f.file_field :image, class:"image-input" %>
     </div>
     <div id="image-preview">
       <!-- uploaded image will be rendered here -->
+
     </div>
-    <div>
+
+    <div style="margin-top:30px;">
     <%= f.submit "Save Changes", class: "btn" %>
     </div>
   <% end %>
 
-  <div class="right">
+  <div class="right" style="margin-top:50px;">
     <%= button_to "Delete Account", @user, method: :delete, class: "btn" %>
   </div>
 
@@ -51,6 +53,8 @@ $(function(){
       var img = new Image();
       img.src = file.target.result;
       $('#image-preview').html(img);
+      $('img').attr('id','avatar');
+      $('img').attr('style','width:300px;height:auto;');
     }
     reader.readAsDataURL(image);
   });
