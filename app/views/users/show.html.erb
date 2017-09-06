@@ -33,13 +33,10 @@
 
   <!-- Posts Section -->
   <div class="col l8 post-section">
-    <div class="row">
-      <div class="col l6">
-        <h2 class="post-title">Posts</h2>
-      </div>
+    <div>
       <% if is_owner %>
-        <div class="col l6 new-post-button">
-          <%= button_to "New Post", new_post_path, method: :get, class: "btn right" %>
+        <div class="new-post-button" style="margin-bottom:25px;">
+          <%= button_to "New Post", new_post_path, method: :get, class: "btn" %>
         </div>
       <% end %>
     </div>
