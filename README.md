@@ -10,8 +10,11 @@ Ponder is for the people who are tired of getting bombarded with emojis,
 
 ### Technologies (languages, external libraries, APIs)
 Built with Ruby on Rails
+
 Materialize
+
 Google Fonts
+
 Paperclip gem
 
 ### Wish List / Future Development
