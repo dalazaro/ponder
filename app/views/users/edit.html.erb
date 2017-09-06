@@ -1,7 +1,7 @@
 <div class="container page-view">
   <h2 class="center">Edit Profile</h2>
 
-  <%= form_for @user do |f| %>
+  <%= form_for @user, url: update_user_path(@user.username) do |f| %>
     <div class="row">
       <div class="col m6 s12">
         <label>First name</label>
@@ -31,14 +31,13 @@
       <!-- uploaded image will be rendered here -->
 
     </div>
-
     <div style="margin-top:30px;">
-    <%= f.submit "Save Changes", class: "btn" %>
+      <%= f.submit "Save Changes", class: "btn" %>
     </div>
   <% end %>
 
   <div class="right" style="margin-top:50px;">
-    <%= button_to "Delete Account", @user, method: :delete, class: "btn" %>
+    <%= button_to "Delete Account", delete_user(@user.username), method: :delete, class: "btn" %>
   </div>
 
 </div>
