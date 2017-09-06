@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container page-view">
   <h2 class="center">Edit Profile</h2>
 
   <%= form_for @user, url: update_user_path(@user.username) do |f| %>
@@ -24,19 +24,29 @@
     </div>
 
     <div>
-      <label>Your Photo</label>
+      <label>Profile Picture</label>
       <%= f.file_field :image, class:"image-input" %>
     </div>
     <div id="image-preview">
       <!-- uploaded image will be rendered here -->
+
     </div>
+<<<<<<< HEAD
     <div>
+=======
+    <div style="margin-top:30px;">
+>>>>>>> dev
       <%= f.submit "Save Changes", class: "btn" %>
     </div>
   <% end %>
 
+<<<<<<< HEAD
   <div class="right">
     <%= button_to "Delete Account", delete_user(@user.username), method: :delete, class: "btn" %>
+=======
+  <div class="right" style="margin-top:50px;">
+    <%= button_to "Delete Account", delete_user_path(@user.username), method: :delete, class: "btn" %>
+>>>>>>> dev
   </div>
 
 </div>
@@ -51,6 +61,8 @@ $(function(){
       var img = new Image();
       img.src = file.target.result;
       $('#image-preview').html(img);
+      $('img').attr('id','avatar');
+      $('img').attr('style','width:300px;height:auto;');
     }
     reader.readAsDataURL(image);
   });
