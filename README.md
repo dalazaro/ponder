@@ -21,5 +21,7 @@ Future development ideas are:
 
 ### Contributors 
 Joanne Cabling
+
 Daryl Lazaro
+
 Christopher Fujino
