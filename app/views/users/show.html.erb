@@ -41,9 +41,13 @@
       <% end %>
     </div>
     <div class="posts">
-      <% @posts.each do |post| %>
-        <h4><%= link_to "#{post.title}", post_path(post.id) %></h4>
-        <p><%= post.content %></p>
+      <% if @posts.length == 0 %>
+        <h5>Click "New Post" to start writing your very first post.</h5>
+      <% else %>
+        <% @posts.each do |post| %>
+          <h4><%= link_to "#{post.title}", post_path(post.id) %></h4>
+          <p><%= post.content %></p>
+        <% end %>
       <% end %>
     </div>
   </div>
