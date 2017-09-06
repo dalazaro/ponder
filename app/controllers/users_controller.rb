@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   # post "/users", to: "users#create"
   def create
     user_params = params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    user_params[:username] = user_params[:username].downcase
+    user_params[:email] = user_params[:email].downcase
     if (User.find_by username: user_params[:username]) #check for pre-existing username
       flash[:error] = "A user with the username \"#{user_params[:username]}\" already exists."
       redirect_to new_user_path
