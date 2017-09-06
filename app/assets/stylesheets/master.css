@@ -1,13 +1,6 @@
 body {
   font-family: 'Crimson Text', serif;
   font-size: 18px;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
 }
 
 .mobile-menu {
@@ -75,5 +68,16 @@ main {
 }
 
 .page-view {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+}
+
+.aboutUs{
+  margin: 1.5em 0 0 0;
+}
+
+.about-image {
+  max-width: 120px;
+  max-height: auto;
+  float: left;
+  margin: 0 1rem 0 0;
 }
