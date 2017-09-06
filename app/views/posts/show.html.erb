@@ -1,15 +1,19 @@
+<% user = current_user %>
+<% is_owner = user ? user.id == @user.id : false %>
 <div class="container page-view">
   <h2 class="center"><%= @post.title %></h2>
 
   <p><%= @post.content %></p>
 
-  <div class="row">
-    <div class="left">
-      <%= button_to "Edit", edit_post_path(@post), method: :get, class: "btn" %>
-    </div>
+  <% if is_owner %>
+    <div class="row">
+      <div class="left">
+        <%= button_to "Edit", edit_post_path(@post), method: :get, class: "btn" %>
+      </div>
 
-    <div class="right">
-      <%= button_to "Delete", "/posts/#{@post.id}", method: :delete, class: "btn", data: {confirm: "Are you sure?"}  %>
+      <div class="right">
+        <%= button_to "Delete", "/posts/#{@post.id}", method: :delete, class: "btn" %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
