@@ -46,7 +46,7 @@
       <% else %>
         <% @posts.each do |post| %>
           <h4><%= link_to "#{post.title}", post_path(post.id) %></h4>
-          <p><%= post.content %></p>
+          <p><%= h(post.content).gsub("\r\n", "<br>").html_safe %></p>
         <% end %>
       <% end %>
     </div>
