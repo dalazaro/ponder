@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container page-view">
   <h2 class="center">Log In</h2>
   <%= form_for @user, url: "/sessions", method: "post" do |f| %>
     <div class="row">
-      <div class="col m6">
+      <div class="col m6 s12">
         <label class="left">Email</label>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "form-content" %>
       </div>
-      <div class="col m6">
+      <div class="col m6 s12">
         <label class="left">Password</label>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: "form-content" %>
       </div>
     </div>
-    <div>
+    <div class="center">
       <%= f.submit "Log In", class: "btn" %>
     </div>
     <br>
     <div class="quote center container">
-      <p>"Unlike a drop of water which loses its identity when it joins the ocean, man does not lose his being in the society in which he lives. Man's life is independent. He is born not for the development of the society alone, but for the development of his self."</p>
+      <p style="text-align:justify;">"Unlike a drop of water which loses its identity when it joins the ocean, man does not lose his being in the society in which he lives. Man's life is independent. He is born not for the development of the society alone, but for the development of his self."</p>
       <cite>&dash; B.R. Ambedkar</cite>
     </div>
   <% end %>
