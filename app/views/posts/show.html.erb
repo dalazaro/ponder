@@ -1,5 +1,5 @@
 <% user = current_user %>
-<% is_owner = user ? user.id == @user.id : false %>
+<% is_owner = user ? user.id == @post.user_id : false %>
 <div class="container page-view">
   <h2 class="center"><%= @post.title %></h2>
 
