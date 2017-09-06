@@ -29,6 +29,8 @@ class UsersController < ApplicationController
   # get "/users/:id", to: "users#show", as: "user"
   def show
     @user = User.find_by_id(params[:id])
+    p "YOLODAWG!"
+    p @user
     @posts = Post.where user_id: params[:id]
     @posts = @posts.reverse
   end

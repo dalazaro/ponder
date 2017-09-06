@@ -1,11 +1,14 @@
-<% is_owner = current_user.id == @user.id %>
+<% user = current_user %>
+<% is_owner = !user ? false : user.id == @user.id %>
 <div class="row container">
   <!-- Sidebar -->
   <div class="col l4 user-profile">
 
     <div class="row">
       <div class="col l12 m5 s5">
-        <%= image_tag @user.image.url(:medium), class: "responsive-img profile-img" %>
+        <% default_url = "/assets/images/default-avatar.png" %>
+        <% image_url = !@user.image_file_name ? default_url : @user.image.url(:medium) %>
+        <%= image_tag image_url, class: "responsive-img profile-img" %>
       </div>
 
       <div class="col l12 m7 s7">
