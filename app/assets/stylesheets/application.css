@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .aboutUs{
+   margin: 1.5em 0 0 0;
+ }
+ .about-image {
+   max-width: 120px;
+   max-height: auto;
+   float: left;
+   margin: 0 1rem 0 0;
+ }
