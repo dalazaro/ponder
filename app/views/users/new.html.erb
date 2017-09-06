@@ -3,21 +3,21 @@
   <%= form_for @user do |f| %>
     <div>
       <label>Username</label>
-      <%= f.text_field :username %>
+      <%= f.text_field :username, class: "form-content" %>
     </div>
     <div>
       <label>E-mail address</label>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class: "form-content" %>
     </div>
     <div>
       <label>Password</label>
-      <%= f.password_field :password, minlength: 8 %>
+      <%= f.password_field :password, minlength: 8, class: "form-content" %>
     </div>
     <div>
       <label>Confirm Password</label>
-      <%= f.password_field :password_confirmation, minlength: 8 %>
+      <%= f.password_field :password_confirmation, minlength: 8, class: "form-content" %>
     </div>
-    <div>
+    <div class="center">
       <%= f.submit "Create Account", class: "btn-large" %>
     </div>
   <% end %>
