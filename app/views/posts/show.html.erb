@@ -9,7 +9,18 @@
     </div>
 
     <div class="right">
-      <%= button_to "Delete", "/posts/#{@post.id}", method: :delete, class: "btn", data: {confirm: "Are you sure?"}  %>
+      <a class="btn modal-trigger" href="#deleteConfirm">Delete</a>
     </div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="deleteConfirm" class="modal">
+  <div class="modal-content">
+    <p>You are about to delete this post. Are you sure you want to do this?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn-flat">Disagree</a>
+    <%= link_to "Agree", "/posts/#{@post.id}", method: :delete, class: "modal-action modal-close btn-flat" %>
   </div>
 </div>
