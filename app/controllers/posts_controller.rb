@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def new
     if session[:user_id]
       @post = Post.new
+      @post_length = 0
     else
       flash[:error] = "Before you start pondering, please create an account or log in."
       redirect_to new_user_path
@@ -17,16 +18,14 @@ class PostsController < ApplicationController
   def create
     post_params = params.require(:post).permit(:title, :content)
     user_id = session[:user_id]
-    p "length is " + post_params[:content].length.to_s
-    if user_id == nil
+    if true_length(post_params[:content]) > 1000
+      flash[:error] = "Your post is over the limit."
+      redirect_to new_post_path
+    elsif user_id == nil
       flash[:error] = "Before you start pondering, please create an account or log in."
       redirect_to new_user_path
     elsif post_params[:title].length < 1
       flash[:error] = "Post must have a title."
-      redirect_to new_post_path
-    elsif post_params[:content].length > 1000
-      #TODO resolve, since this counts escaped chars (e.g. "\n") as 2
-      flash[:error] = "Post cannot be longer than 1000 characters."
       redirect_to new_post_path
     else
       post = Post.new(post_params)
@@ -46,6 +45,7 @@ class PostsController < ApplicationController
   # get "/posts/:post_id/edit", to: "posts#edit"
   def edit
     @post = Post.find_by_id(params[:post_id])
+    @post_length = true_length(@post.content)
     if @post.user_id != session[:user_id]
       flash[:error] = "You are not authorized to edit this post."
       redirect_to post_path(params[:post_id])
@@ -55,14 +55,19 @@ class PostsController < ApplicationController
   # patch "/posts/:post_id", to: "posts#update"
   def update
     post_params = params.require(:post).permit(:title, :content)
-    post = Post.find_by_id(params[:post_id])
-    # user authorization
-    if post.user_id != session[:user_id]
-      flash[:error] = "You are not authorized to edit this post."
+    if true_length(post_params[:content]) > 1000
+      flash[:error] = "This post is beyond the length limit."
+      redirect_to edit_post_path params[:post_id]
     else
-      post.update_attributes(post_params)
+      post = Post.find_by_id(params[:post_id])
+      # user authorization
+      if post.user_id != session[:user_id]
+        flash[:error] = "You are not authorized to edit this post."
+      else
+        post.update_attributes(post_params)
+      end
+      redirect_to post_path post
     end
-    redirect_to post_path post
   end
 
   # delete "/posts/:post_id", to: "posts#destroy"
@@ -75,5 +80,12 @@ class PostsController < ApplicationController
       post.destroy # delete this post from db
       redirect_to user_path(user.username)
     end
+  end
+
+  private
+
+  def true_length(str)
+    str = str.gsub("\r\n", 'x')
+    str.length
   end
 end
