@@ -20,6 +20,9 @@ class PostsController < ApplicationController
     if session[:user_id] == nil
       flash[:error] = "Before you start pondering, please create an account or log in."
       redirect_to new_user_path
+    elsif post_params[:title].length < 1
+      flash[:error] = "Post must have a title."
+      redirect_to new_post_path
     elsif post_params[:content].length > 1000
       #TODO resolve, since this counts escaped chars (e.g. "\n") as 2
       flash[:error] = "Post cannot be longer than 1000 characters."
