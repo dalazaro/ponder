@@ -1,9 +1,14 @@
 <% user = current_user %>
 <% is_owner = user ? user.id == @post.user_id : false %>
-<div class="container page-view">
-  <h2 class="center"><%= @post.title %></h2>
+<% author = User.find(@post.user_id).username %>
 
-  <p><%= @post.content %></p>
+<div class="container page-view">
+  <h3 class="center post-headline"><%= @post.title %></h3>
+  <h4 class="center post-author">
+    by <a href="/users/<%= author %>"><%= author %></a>
+  </h4>
+
+  <p><%= h(@post.content).gsub("\r\n", "<br>").html_safe %></p>
 
   <% if is_owner %>
     <div class="row">

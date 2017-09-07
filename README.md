@@ -1,24 +1,54 @@
-# README
+# Ponder 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ponder is a microblogging platform for creatives who want an outlet for their thoughts, philosophies, poems, prose, movie/music/TV show reviews, etc, without all the distractions and clutter of other social applications filled with external links, clickbait, and hateful comments. Let your thoughts run wild with Ponder.
 
-Things you may want to cover:
+## Links
 
-* Ruby version
+### Production App, deployed on Digital Ocean
+http://www.ponder.ca
 
-* System dependencies
+### Development App, deployed on Heroku
+http://ponder-blog.herokuapp.com/
 
-* Configuration
+## Wireframes
+![Wireframes for Ponder](https://i.imgur.com/7GozdH8.png)
 
-* Database creation
+## User Stories
+Users can... 
+- create a new account and then redirected to new profile page
+- view a profile page with all posts from a user
+- login/logout
+- click an 'edit' link from their profile page to open an edit form and update their profile
+- click a link from their own profile page to delete their account
+- read a post
+- write a new post by clicking on new post button
+- click an edit link from their view post page of their own post to open an edit form
+- submit their post edit, and returns to their post show page
+- delete a post they own
 
-* Database initialization
+## Technologies (languages, external libraries, APIs)
+- Built with Ruby on Rails
+- PostgreSQL/Active Record
+- Materialize
+- JavaScript & JQuery
+- HTML/CSS
+- Google Fonts
+- Paperclip gem
+- Heroku/Digital Ocean (app deployment)
+- Adobe Illustrator (wireframes)
 
-* How to run the test suite
+## Future Development
+We wish to eventually include:
+- password recovery
+- search for other users
+- Discovery page for featured/curated user content
+- tags/categories
+- voting system which will enable users to upvote a post
+- following system with RSS feed
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributors 
+[Joanne Cabling](https://github.com/jojobeth1)
 
-* Deployment instructions
+[Daryl Lazaro](https://github.com/dalazaro)
 
-* ...
+[Christopher Fujino](https://github.com/christopherfujino)

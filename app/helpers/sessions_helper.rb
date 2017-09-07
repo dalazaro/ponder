@@ -12,7 +12,8 @@ module SessionsHelper
     @current_user = session[:user_id] = nil
   end
 
-  def is_authorized?(resource_id) # check if current_user has access
+  # check if current_user has access
+  def authorized?(resource_id)
     @current_user.id == resource_id
   end
 end
