@@ -72,8 +72,9 @@ class UsersController < ApplicationController
       flash[:error] = 'You are not authorized to delete this user.'
       redirect_to user_path(params[:username])
     else
+      logout
       user.destroy
-      redirect_to new_user_path
+      redirect_to root_path
     end
   end
 end
