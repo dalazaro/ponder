@@ -1,6 +1,6 @@
 # Ponder 
-## Description
-Ponder is a microblogging platform for creatives who want an outlet for their thoughts, philosophies, poems, prose, movie/music/TV show reviews etc., without having all the distractions and clutter of other social applications that are filled with external links, clickbait, and hateful comments. Let your thoughts run wild with Ponder.
+
+Ponder is a microblogging platform for creatives who want an outlet for their thoughts, philosophies, poems, prose, movie/music/TV show reviews, etc, without all the distractions and clutter of other social applications filled with external links, clickbait, and hateful comments. Let your thoughts run wild with Ponder.
 
 ## Wireframes
 ![Wireframes for ponder](https://i.imgur.com/7GozdH8.png)
@@ -8,15 +8,15 @@ Ponder is a microblogging platform for creatives who want an outlet for their th
 ## User Stories
 Users can... 
 
-- can create new account and then redirected to new profile page
+- create new account and then redirected to new profile page
 
-- can view a profile page with all posts from a user
+- view a profile page with all posts from a user
 
-- can to login/logout
+- login/logout
 
-- can click an 'edit' link from their profile page to open an edit form and update their profile
+- click an 'edit' link from their profile page to open an edit form and update their profile
 
-- can click a link from their own profile page to delete their account
+- click a link from their own profile page to delete their account
 
 - read a post
 
@@ -29,8 +29,12 @@ Users can...
 - delete a post they own
 
 
-## Link to Heroku hosted project
-### Use Digital Ocean
+## Links to App
+
+### Production App, deployed on Digital Ocean
+http://www.ponder.ca
+
+### Development App on Heroku
 http://ponder-blog.herokuapp.com/
 
 
@@ -55,6 +59,7 @@ Adobe Illustrator (wireframes)
 
 ### Future Development
 Future development ideas are: 
+- password recovery
 - discovery page
 - tags/categories
 - adding a voting system which will enable users to up-vote on post
