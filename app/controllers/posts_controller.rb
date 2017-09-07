@@ -60,8 +60,8 @@ class PostsController < ApplicationController
       redirect_to edit_post_path params[:post_id]
     else
       post = Post.find_by_id(params[:post_id])
-      # user authorization
       if post.user_id != session[:user_id]
+      # user authorization
         flash[:error] = 'You are not authorized to edit this post.'
       else
         post.update_attributes(post_params)
