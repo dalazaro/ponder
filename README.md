@@ -3,7 +3,7 @@
 Ponder is a microblogging platform for creatives to 
 
 ## Wireframes and user stories
-![Wireframe1](https://i.imgur.com/ycuUboZ.png)
+![Wireframes for ponder](https://i.imgur.com/7GozdH8.png)
 
 
 ## Link to Heroku hosted project
