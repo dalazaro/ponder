@@ -9,16 +9,16 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:username, :email, :password, :password_confirmation)
     user_params[:username] = user_params[:username].downcase
     user_params[:email] = user_params[:email].downcase
-    # check for pre-existing username
     if User.find_by username: user_params[:username]
+      # check for pre-existing username
       flash[:error] = "A user with the username \"#{user_params[:username]}\" already exists."
       redirect_to new_user_path
-    # check for pre-existing e-mail
     elsif User.find_by email: user_params[:email]
+      # check for pre-existing e-mail
       flash[:error] = "A user with the e-mail address \"#{user_params[:email]}\" already exists."
       redirect_to new_user_path
-    # validate e-mail
     elsif user_params[:email] !~ /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+      # validate e-mail
       flash[:error] = "\"#{user_params[:email]}\" is not a valid e-mail address."
       redirect_to new_user_path
     elsif user_params[:password].length < 8

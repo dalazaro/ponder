@@ -77,7 +77,8 @@ class PostsController < ApplicationController
       flash[:error] = 'You are not authorized to delete this post.'
     else
       user = User.find_by_id post.user_id
-      post.destroy # delete this post from db
+      post.destroy
+      # delete this post from db
       redirect_to user_path(user.username)
     end
   end
