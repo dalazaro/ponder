@@ -40,9 +40,10 @@ Users can...
 ## Future Development
 We wish to eventually include:
 - password recovery
-- discovery page
+- search for other users
+- Discovery page for featured/curated user content
 - tags/categories
-- adding a voting system which will enable users to up-vote on post
+- voting system which will enable users to upvote a post
 - following system with RSS feed
 
 ## Contributors 
