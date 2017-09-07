@@ -45,7 +45,7 @@ We wish to eventually include:
 - adding a voting system which will enable users to up-vote on post
 - following system with RSS feed
 
-### Contributors 
+## Contributors 
 [Joanne Cabling](https://github.com/jojobeth1)
 
 [Daryl Lazaro](https://github.com/dalazaro)
