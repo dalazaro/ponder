@@ -1,11 +1,12 @@
 # Ponder 
 ## Description
-Ponder is for the people who are tired of getting bombarded with emojis, 
+Ponder is a microblogging platform for creatives to 
 
 ## Wireframes and user stories
 
-##Link to Heroku hosted project
-### http://ponder-blog.herokuapp.com/
+## Link to Heroku hosted project
+### Use Digital Ocean
+http://ponder-blog.herokuapp.com/
 
 
 ## Technologies (languages, external libraries, APIs)
@@ -17,14 +18,16 @@ Google Fonts
 
 Paperclip gem
 
-### Wish List / Future Development
+### Future Development
 Future development ideas are: 
-- adding a voting system which will enable users to vote on their
+- discovery page
+- tags/categories
+- adding a voting system which will enable users to up-vote on post
 - following system with RSS feed
 
 ### Contributors 
-Joanne Cabling
+[Joanne Cabling](https://github.com/jojobeth1)
 
-Daryl Lazaro
+[Daryl Lazaro] (https://github.com/dalazaro)
 
-Christopher Fujino
+[Christopher Fujino](https://github.com/christopherfujino)
