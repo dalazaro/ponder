@@ -2,16 +2,16 @@
 
 Ponder is a microblogging platform for creatives who want an outlet for their thoughts, philosophies, poems, prose, movie/music/TV show reviews, etc, without all the distractions and clutter of other social applications filled with external links, clickbait, and hateful comments. Let your thoughts run wild with Ponder.
 
-## Links to App
+## Links
 
 ### Production App, deployed on Digital Ocean
 http://www.ponder.ca
 
-### Development App on Heroku
+### Development App, deployed on Heroku
 http://ponder-blog.herokuapp.com/
 
 ## Wireframes
-![Wireframes for ponder](https://i.imgur.com/7GozdH8.png)
+![Wireframes for Ponder](https://i.imgur.com/7GozdH8.png)
 
 ## User Stories
 Users can... 
