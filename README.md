@@ -1,6 +1,6 @@
 # Ponder 
 ## Description
-Ponder is a microblogging platform for creatives to 
+Ponder is a microblogging platform for creatives who want to write ideas, poems, proses etc., without having all the noise of other social applications that are filled with images and videos. Let your thoughts be known with Ponder!
 
 ## Wireframes
 ![Wireframes for ponder](https://i.imgur.com/7GozdH8.png)
