@@ -1,3 +1,6 @@
+# https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-(and-RSpec)
+# https://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html
+
 require 'spec_helper'
 require 'rspec-rails'
 
