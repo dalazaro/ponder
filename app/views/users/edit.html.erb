@@ -47,7 +47,7 @@
   </div>
   <div class="modal-footer">
     <a href="#!" class="modal-action modal-close btn-flat">Disagree</a>
-    <%= link_to "Agree", delete_user_path(@user), method: :delete, class: "modal-action modal-close btn-flat" %>
+    <%= link_to "Agree", delete_user_path(@user.username), method: :delete, class: "modal-action modal-close btn-flat" %>
   </div>
 </div>
 
