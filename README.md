@@ -4,6 +4,9 @@ Ponder is a microblogging platform for creatives to
 
 ## Wireframes and user stories
 
+
+![alt text](https://imgur.com/ycuUboZ "Splash Page")
+
 ## Link to Heroku hosted project
 ### Use Digital Ocean
 http://ponder-blog.herokuapp.com/
