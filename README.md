@@ -1,6 +1,6 @@
 # Ponder 
 ## Description
-Ponder is a microblogging platform for creatives who want to write ideas, poems, proses etc., without having all the noise of other social applications that are filled with images and videos. Let your thoughts be known with Ponder!
+Ponder is a microblogging platform for creatives who want an outlet for their thoughts, philosophies, poems, prose, movie/music/TV show reviews etc., without having all the distractions and clutter of other social applications that are filled with external links, clickbait, and hateful comments. Let your thoughts run wild with Ponder.
 
 ## Wireframes
 ![Wireframes for ponder](https://i.imgur.com/7GozdH8.png)
@@ -29,7 +29,6 @@ Users can...
 - delete a post they own
 
 
-
 ## Link to Heroku hosted project
 ### Use Digital Ocean
 http://ponder-blog.herokuapp.com/
@@ -38,11 +37,21 @@ http://ponder-blog.herokuapp.com/
 ## Technologies (languages, external libraries, APIs)
 Built with Ruby on Rails
 
+PostgreSQL/Active Record
+
 Materialize
+
+JavaScript & JQuery
+
+HTML/CSS
 
 Google Fonts
 
 Paperclip gem
+
+Heroku/Digital Ocean (app deployment)
+
+Adobe Illustrator (wireframes)
 
 ### Future Development
 Future development ideas are: 
