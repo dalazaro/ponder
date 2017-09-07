@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
     @user = User.confirm(user_params)
     if @user
       login(@user)
-      flash[:notice] = "Successfully logged in!"
+      flash[:notice] = 'Successfully logged in!'
       redirect_to user_path(@user.username)
     else
-      flash[:error] = "Incorrect email or password. Please try again."
+      flash[:error] = 'Incorrect email or password. Please try again.'
       redirect_to login_path
     end
   end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   # get "/logout", to: "sessions#destroy"
   def destroy
     logout
-    flash[:notice] = "Successfully logged out."
+    flash[:notice] = 'Successfully logged out.'
     redirect_to root_path
   end
 
