@@ -27,5 +27,8 @@ module Ponder
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators do |g|
+      :controller_specs => true
+    end
   end
 end
