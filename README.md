@@ -1,24 +1,68 @@
-# README
+# Ponder 
+## Description
+Ponder is a microblogging platform for creatives who want an outlet for their thoughts, philosophies, poems, prose, movie/music/TV show reviews etc., without having all the distractions and clutter of other social applications that are filled with external links, clickbait, and hateful comments. Let your thoughts run wild with Ponder.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Wireframes
+![Wireframes for ponder](https://i.imgur.com/7GozdH8.png)
 
-Things you may want to cover:
+## User Stories
+Users can... 
 
-* Ruby version
+- can create new account and then redirected to new profile page
 
-* System dependencies
+- can view a profile page with all posts from a user
 
-* Configuration
+- can to login/logout
 
-* Database creation
+- can click an 'edit' link from their profile page to open an edit form and update their profile
 
-* Database initialization
+- can click a link from their own profile page to delete their account
 
-* How to run the test suite
+- read a post
 
-* Services (job queues, cache servers, search engines, etc.)
+- write a new post by clicking on new post button
 
-* Deployment instructions
+- click an edit link from their view post page of their own post to open an edit form
 
-* ...
+- submit their post edit, and returns to their post show page
+
+- delete a post they own
+
+
+## Link to Heroku hosted project
+### Use Digital Ocean
+http://ponder-blog.herokuapp.com/
+
+
+## Technologies (languages, external libraries, APIs)
+Built with Ruby on Rails
+
+PostgreSQL/Active Record
+
+Materialize
+
+JavaScript & JQuery
+
+HTML/CSS
+
+Google Fonts
+
+Paperclip gem
+
+Heroku/Digital Ocean (app deployment)
+
+Adobe Illustrator (wireframes)
+
+### Future Development
+Future development ideas are: 
+- discovery page
+- tags/categories
+- adding a voting system which will enable users to up-vote on post
+- following system with RSS feed
+
+### Contributors 
+[Joanne Cabling](https://github.com/jojobeth1)
+
+[Daryl Lazaro](https://github.com/dalazaro)
+
+[Christopher Fujino](https://github.com/christopherfujino)
