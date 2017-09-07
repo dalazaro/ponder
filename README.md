@@ -28,6 +28,6 @@ Future development ideas are:
 ### Contributors 
 [Joanne Cabling](https://github.com/jojobeth1)
 
-[Daryl Lazaro] (https://github.com/dalazaro)
+[Daryl Lazaro](https://github.com/dalazaro)
 
 [Christopher Fujino](https://github.com/christopherfujino)
